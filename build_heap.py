@@ -8,7 +8,7 @@ def build_heap(data):
 
     m = len(data)
     
-    for i in range (n// 2, -1,-1):
+    for i in range (m// 2, -1,-1):
         j=i
         while True:
             l=j
