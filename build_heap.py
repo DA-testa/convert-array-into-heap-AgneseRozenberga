@@ -14,14 +14,14 @@ def build_heap(data):
             l=j
             if 2 * j + 1 < m and data [2 * j + 1 ] < data[l]:
                 l= 2 * j + 1
-            elif 2*j + 2 < m and data[2*j+2] < data[l]:
+            if 2*j + 2 < m and data[2*j+2] < data[l]:
                 l= 2 * j + 2
             if l==j:
                 break
-        l != j:
-        data[j], data [l] = data[l], data[j]
-        swaps.append((j,l))
-        j = l
+            if l != j:
+                data[j], data [l] = data[l], data[j]
+                swaps.append((j,l))
+                j = l
 
     return swaps
 
@@ -33,7 +33,7 @@ def main():
     # first two tests are from keyboard, third test is from a file
 
     inputs = input()
-    if inputs == "I":
+    if "I" in inputs:
 
     # input from keyboard
         n = int(input())
@@ -41,17 +41,15 @@ def main():
 
         # checks if lenght of data is the same as the said lenght
         assert len(data) == n
-        assert len(set(data)) == n
 
-    elif inputs == "F":
-
-        with open('tests.txt') as file:
-            n=int(file.readline())
-            data = list(map(int, file.readline().split()))
+    if  "F" in inputs:
+        inputs = "tests/"+ input()
+        with open(inputs, 'r') as file:
+            n=int(file.readline().strip())
+            data = list(map(int, file.readline().strip().split()))
 
     # checks if lenght of data is the same as the said lenght
             assert len(data) == n
-            assert len(set(data)) == n
     else:
         return
 
@@ -64,6 +62,7 @@ def main():
 
 
     # output all swaps
+    swaps =build_heap(data)
     print(len(swaps))
     for i, j in swaps:
         print(i, j, end = " ")
