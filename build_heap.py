@@ -14,13 +14,14 @@ def build_heap(data):
             l=j
             if 2 * j + 1 < m and data [2 * j + 1 ] < data[l]:
                 l= 2 * j + 1
-            elif 2*j + 2 < m and data[2*j+2] < data[l]:
+            if 2*j + 2 < m and data[2*j+2] < data[l]:
                 l= 2 * j + 2
-            elif l==j:
+            if l==j:
                 break
-            data[j], data [l] = data[l], data[j]
-            swaps.append((j,l))
-            j = l
+            if l != j:
+                data[j], data [l] = data[l], data[j]
+                swaps.append((j,l))
+                j = l
 
     return swaps
 
