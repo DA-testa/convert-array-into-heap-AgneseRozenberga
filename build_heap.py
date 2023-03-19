@@ -12,9 +12,9 @@ def build_heap(data):
         j=i
         while True:
             l=j
-            if 2 * j + 1 < m || data [2 * j + 1 ] < data[l]:
+            if 2 * j + 1 < m and data [2 * j + 1 ] < data[l]:
                 l= 2 * j + 1
-            elif 2*j + 2 < m || data[2*j+2] < data[l]:
+            elif 2*j + 2 < m and data[2*j+2] < data[l]:
                 l= 2 * j + 2
             elif l==j:
                 break
