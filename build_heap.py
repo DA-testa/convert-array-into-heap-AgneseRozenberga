@@ -15,8 +15,7 @@ def build_heap(data):
                 smol= 2 * i + 1
             if 2*i + 2 < m and data[2*i+2] < data[smol]:
                 smol= 2 * i + 2
-            if smol==i:
-                break
+            
             if smol != i:
                 swaps.append((i,smol))
                 data[i], data [smol] = data[smol], data[i]
@@ -35,7 +34,7 @@ def build_heap(data):
                     else:
                         break
                 if 2 * s+1<m and data [2* s + 1] < data[p]:
-                    l = 2*s+1
+                    p = 2*s+1
                     swaps.append((s,p))
                     data[s], data [p] = data[p], data[s]
 
