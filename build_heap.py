@@ -9,8 +9,7 @@ def build_heap(data):
     m = len(data)
 
     for i in range (m// 2, -1,-1):
-        j=i
-        while True:
+       
             l=j
             if 2 * j + 1 < m and data [2 * j + 1 ] < data[l]:
                 l= 2 * j + 1
@@ -19,9 +18,26 @@ def build_heap(data):
             if l==j:
                 break
             if l != j:
-                data[j], data [l] = data[l], data[j]
                 swaps.append((j,l))
-                j = l
+                data[j], data [l] = data[l], data[j]
+                s=l
+                p=s
+
+                while 2 * s + 2< m:
+                    if data[2*s +2] < data[p]:
+                        p = 2 * s + 2
+                    if data[2*s 1] < data[p]:
+                        p = 2 * s + 1
+                    if p != s:
+                        swaps.append((s, p))
+                        data[s], data [p] = data[p], data[s]
+                        s=p
+                    else:
+                        break
+                if 2 * s+1<m and data [2* s + 1] < data[p]:
+                    l = 2*s+1
+                    swaps.append((s,p))
+                    data[s], data [p] = data[p], data[s]
 
     return swaps
 
