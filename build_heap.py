@@ -31,6 +31,8 @@ def main():
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
 
+    input = input()
+    if input == "I":
 
     # input from keyboard
     n = int(input())
@@ -39,6 +41,19 @@ def main():
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
     assert len(set(data)) == n
+
+    elif input == "F":
+        filename = input()
+        with open(filename) as file:
+            n=int(file.readline())
+            data = list(map(int, file.readline().split()))
+
+    # checks if lenght of data is the same as the said lenght
+            assert len(data) == n
+            assert len(set(data)) == n
+    else:
+        return
+
     # calls function to assess the data 
     # and give back all swaps
     swaps = build_heap(data)
