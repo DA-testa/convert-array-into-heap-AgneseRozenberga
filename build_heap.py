@@ -7,7 +7,7 @@ def build_heap(data):
     # try to achieve  O(n) and not O(n2)
 
     m = len(data)
-    
+
     for i in range (m// 2, -1,-1):
         j=i
         while True:
@@ -48,9 +48,9 @@ def main():
 
 
     # output all swaps
-    print(len(swaps))
+    print(len(swaps),end = " ")
     for i, j in swaps:
-        print(i, j)
+        print(i, j, end = " ")
 
 
 if __name__ == "__main__":
