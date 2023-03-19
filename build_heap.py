@@ -45,7 +45,7 @@ def main():
 
     elif inputs == "F":
         filename = input()
-        with open("tests.txt") as file:
+        with open(filename) as file:
             n=int(file.readline())
             data = list(map(int, file.readline().split()))
 
