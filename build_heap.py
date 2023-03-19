@@ -58,8 +58,8 @@ def main():
         assert len(data) == n
 
     if  "F" in inputs:
-        inputs = "tests/"+ input()
-        with open(inputs, 'r') as file:
+        inputss = "tests/"+ input()
+        with open(inputss, 'r') as file:
             n=int(file.readline().strip())
             data = list(map(int, file.readline().strip().split()))
 
