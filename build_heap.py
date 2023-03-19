@@ -31,18 +31,18 @@ def main():
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
 
-    input = input()
-    if input == "I":
+    inputs = input()
+    if inputs == "I":
 
     # input from keyboard
-    n = int(input())
-    data = list(map(int, input().split()))
+        n = int(input())
+        data = list(map(int, input().split()))
 
-    # checks if lenght of data is the same as the said lenght
-    assert len(data) == n
-    assert len(set(data)) == n
+        # checks if lenght of data is the same as the said lenght
+        assert len(data) == n
+        assert len(set(data)) == n
 
-    elif input == "F":
+    elif inputs == "F":
         filename = input()
         with open(filename) as file:
             n=int(file.readline())
