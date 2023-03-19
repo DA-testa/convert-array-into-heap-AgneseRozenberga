@@ -1,6 +1,6 @@
 # python3
 
-
+# 221RDB117 Agnese Rozenberga 11.grupa
 def build_heap(data):
     swaps = []
     # TODO: Creat heap and heap sort
@@ -26,7 +26,7 @@ def build_heap(data):
                 while 2 * s + 2< m:
                     if data[2*s +2] < data[p]:
                         p = 2 * s + 2
-                    if data[2*s 1] < data[p]:
+                    if data[2*s +1] < data[p]:
                         p = 2 * s + 1
                     if p != s:
                         swaps.append((s, p))
